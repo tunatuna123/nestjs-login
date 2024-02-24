@@ -9,8 +9,7 @@ export class AuthService {
     if (email === 'test@test.com' && password === 'test') {
       const payload = { email: email, sub: '0' };
       return this.jwtService.sign(payload);
-    } else {
-      throw new UnauthorizedException('None Authorized User');
     }
+    throw new UnauthorizedException('Not Authorized User');
   }
 }
